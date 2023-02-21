@@ -83,9 +83,9 @@ nui_skeleton_conn = np.matrix([
 def skel_vis(X, tidix):
     
     assert tidix >= 1
-    assert tidix <= matrix.shape[0]
+    assert tidix <= X.shape[0]
 
-    xyz_ti=X[tidx,:]
+    xyz_ti=X[tidix,:]
 
     skel=xyz_ti.reshape( NUI_SKELETON_POSITION_COUNT, 4)
  
