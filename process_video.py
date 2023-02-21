@@ -139,4 +139,5 @@ def video_to_tensor(video_name: str) -> np.ndarray:
   for i in range(fail2):
     for _ in range(20):
       T = np.hstack((temp, T))
+  T = T.reshape(1280, 3)
   return T
