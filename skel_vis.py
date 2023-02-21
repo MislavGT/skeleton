@@ -96,13 +96,13 @@ def skel_vis(X, tidix):
     ax.set_ylabel('y', labelpad=20)
     ax.set_zlabel('z', labelpad=20)
     
-    ax.scatter3D(X[:,0], X[:,2], X[:,1], zdir='z', c= 'red');
+    ax.scatter3D(skel[:,0], skel[:,2], skel[:,1], zdir='z', c= 'red');
 
     for i in range(nui_skeleton_conn.size//2):
         prva = nui_skeleton_conn[i, 0];
         druga = nui_skeleton_conn[i, 1];
     
-        ax.plot([X[prva , 0], X[druga , 0]], [X[ prva, 2], X[druga, 2 ]],zs=[X[prva, 1], X[druga, 1]])
+        ax.plot([skel[prva , 0], skel[druga , 0]], [skel[ prva, 2], skel[druga, 2 ]],zs=[skel[prva, 1], skel[druga, 1]])
     
     plt.show()
 
