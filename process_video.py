@@ -134,7 +134,9 @@ def video_to_tensor(video_name: str) -> np.ndarray:
   fail1 = fail//2
   fail2 = fail - fail1
   for i in range(fail1):
-    T = np.hstack((T, temp))
+    for _ in range(20):
+      T = np.hstack((T, temp))
   for i in range(fail2):
-    T = np.hstack((temp, T))
+    for _ in range(20):
+      T = np.hstack((temp, T))
   return T
