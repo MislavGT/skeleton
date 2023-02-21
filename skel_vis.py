@@ -82,7 +82,7 @@ nui_skeleton_conn = np.matrix([
 
 def skel_vis(X, tidix):
     
-    assert tidix >= 1
+    assert tidix >= 0
     assert tidix <= X.shape[0]
 
     xyz_ti=X[tidix,:]
