@@ -30,17 +30,17 @@ def video_to_tensor(video_name: str) -> np.ndarray:
         if not results.pose_landmarks:
           fail+=1
           continue
-        x = np.abs(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_HIP].x - 
+        x = np.abs(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_HIP].x - \
                    results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_HIP].x)/2
-        y = results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_HIP].y + 
+        y = results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_HIP].y + \
         results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_HIP].y
         z = 2.7
         temp = np.array([x, y, z], dtype = float)
         T = np.hstack((T, temp))
         T = np.hstack((T, temp))
-        x = np.abs(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_SHOULDER].x - 
+        x = np.abs(results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_SHOULDER].x - \
                    results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_SHOULDER].x)/2
-        y = (results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_SHOULDER].y + 
+        y = (results.pose_landmarks.landmark[mp_pose.PoseLandmark.LEFT_SHOULDER].y + \
              results.pose_landmarks.landmark[mp_pose.PoseLandmark.RIGHT_SHOULDER].y)/2
         z = 2.7
         temp = np.array([x, y, z], dtype = float)
